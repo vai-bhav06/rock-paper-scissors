@@ -1,38 +1,140 @@
-.App {
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
   text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Buttons for rock-paper-scissors */
+.choices button {
+  margin: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
   color: white;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.choices button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.choices button:active {
+  transform: scale(0.95);
+}
+
+/* Result animation */
+.results.animate {
+  animation: fadeSlide 0.6s ease-in-out;
+}
+
+/* Loading text animation */
+.loading {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  animation: pulse 1s infinite;
+}
+
+/* Play Again button styling */
+.results button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.results button:hover {
+  transform: scale(1.1);
+}
+
+/* Scoreboard */
+.scoreboard {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Hand bounce animation on selected choice */
+.emoji {
+  font-size: 2rem;
+  display: inline-block;
+  animation: bounceHand 0.6s ease-in-out infinite;
+}
+
+@keyframes bounceHand {
+  0%, 100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Finger pointing shake */
+.highlight span::before {
+  content: '👉';
+  display: inline-block;
+  margin-right: 6px;
+  animation: fingerPoint 1s infinite;
+}
+
+@keyframes fingerPoint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+/* Result box entry */
+.results.animate {
+  animation: fadeSlide 0.6s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Animations keyframes */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
