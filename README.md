@@ -23,4 +23,4 @@ A fun and animated **Rock Paper Scissors** game built with **React.js**, featuri
 - 🕒 1-second delay to simulate computer thinking
 - 📊 Live score tracking
 - 🔁 Play Again option
-- 🌐 Deployed with GitHub Pages
+
